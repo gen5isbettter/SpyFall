@@ -1,11 +1,9 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 # ignore temp
 /temp
-# ignore thunder thighs
-/spyfall/nodemodules
 
 # dependencies
-/node_modules
+/spyfall/node_modules
 /.pnp
 .pnp.js
 .yarn/install-state.gz
@@ -14,7 +12,7 @@
 /coverage
 
 # next.js
-/.next/
+/spyfall/.next/
 /out/
 
 # production
