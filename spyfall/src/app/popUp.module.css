@@ -1,0 +1,24 @@
+.popUpBack {
+    position: fixed; /* Fixed positioning to cover the viewport */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    height: 100vh; /* Full height of the viewport */
+    width: 100%; /* Full width of the viewport */
+    display: grid;
+    place-items: center; /* Center the pop-up */
+    background-color: rgba(0, 0, 0, 0.4); /* More transparent background */
+    z-index: 1000; /* Ensure it appears above other elements */
+}
+
+.popUpContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%; /* Full width for the container */
+    max-width: 600px; /* Set a max-width for the pop-up */
+    background-color: rgba(200, 200, 200, 0.9); /* Semi-transparent white for contrast */
+    padding: 3rem;
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for better visibility */
+}
