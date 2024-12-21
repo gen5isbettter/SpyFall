@@ -1,0 +1,214 @@
+.root {
+  align-content: top-center;
+  position: absolute;
+  display: flex;
+  top: 0px;
+  bottom: 0px;
+  width: 100%;
+}
+
+.header {
+  float:none;
+  text-align: center;
+  align-content: top;
+  padding-top: 20px;
+  flex: 0 0 auto;
+}
+
+.container {
+  float:none;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+}
+
+.homeContainer {
+  float:none;
+  text-align: center;
+  margin-bottom: 170px;
+}
+
+.lobbyContainer {
+  float:none;
+  text-align: center;
+  margin-bottom: 170px;
+}
+
+.gameContainer {
+  float:none;
+  text-align: center;
+  margin-bottom: 170px;
+}
+
+.spacer100 {
+  padding-top: 100px; 
+}
+
+.spacer50 {
+  padding-top: 50px; 
+}
+
+.playerList {
+  float:none;
+  text-align: center;
+  padding-top: 20px;
+  min-height: 170px;
+}
+
+
+.row {
+  float:none;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.title {
+  font-size:52px;
+  color:rgb(212, 21, 21);
+  padding-bottom: 40px;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+.stink {
+  font-size:26px;
+  color:rgb(212, 21, 21);
+  font-family: "Comic Sans MS";
+}
+
+.poop {
+  font-size: 20px;
+  color:brown;
+  font-family: "Comic Sans MS";
+  text-align: center;
+}
+
+.table {
+  font-size: 20px;
+  color:brown;
+  font-family: "Comic Sans MS";
+  text-align: center;
+  width: 25%;
+  margin: 0% auto;
+}
+
+.roomCodeInput {
+  border-radius: 12px;
+  border: 2px solid black;
+  color: rgb(230, 230, 230);
+  background-color: rgb(29, 29, 29);
+  font-family: "Comic Sans MS";
+  font-size: 20px;
+  display: inline;
+  margin-left: 8px;
+  margin-right: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  width: 269px;
+}
+
+.nameInput {
+  border-radius: 12px;
+  border: 2px solid black;
+  color: rgb(230, 230, 230);
+  background-color: rgb(29, 29, 29);
+  font-family: "Comic Sans MS";
+  font-size: 20px;
+  display: inline;
+  margin-left: 8px;
+  margin-right: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  width: 375px;
+}
+
+.button {
+  border-radius: 12px;
+  border: 2px solid black;
+  color: black;
+  background-color: whitesmoke;
+  font-family: "Comic Sans MS";
+  font-size: 20px;
+  display: inline;
+  margin-left: 8px;
+  margin-right: 8px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.button:hover {
+  background-color: red;
+}
+
+.buttonSmall {
+  border-radius: 8px;
+  border: 2px solid black;
+  color: black;
+  background-color: whitesmoke;
+  font-family: "Comic Sans MS";
+  font-size: 15px;
+  display: inline;
+  margin-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+.buttonSmall:hover {
+  background-color: red;
+}
+
+/* ======================================= CONTENT FOR POPUPS ======================================= */
+
+.popUpHeader {
+  font-size:26px;
+  color:rgb(30, 30, 30);
+  font-family: "Comic Sans MS";
+}
+
+.popUpText {
+  font-size:24px;
+  color:rgb(30, 30, 30);
+  font-family: "Comic Sans MS";
+  display: inline;
+}
+
+.cum {
+  font-size:15px;
+  color: rgb(121, 17, 17);
+  font-family: "Comic Sans MS";
+  display: inline;
+}
+
+.popUpBack {
+  position: fixed; /* Fixed positioning to cover the viewport */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  height: 100vh; /* Full height of the viewport */
+  width: 100%; /* Full width of the viewport */
+  display: grid;
+  place-items: center; /* Center the pop-up */
+  background-color: rgba(0, 0, 0, 0.4); /* More transparent background */
+  z-index: 1000; /* Ensure it appears above other elements */
+}
+
+.popUpContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%; /* Full width for the container */
+  max-width: 600px; /* Set a max-width for the pop-up */
+  background-color: rgb(230, 230, 230); /* Semi-transparent white for contrast */
+  padding: 3rem;
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for better visibility */
+}

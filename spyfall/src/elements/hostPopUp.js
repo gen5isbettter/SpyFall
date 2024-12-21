@@ -1,12 +1,17 @@
-import React from "react";
-import styles from "../popUp.module.css";
+'use client';
 
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import styles from "../styles/page.module.css";
 
 import { useState } from 'react';
 
+import { useRouter } from 'next/navigation';
+
+import { saveState } from "@/utils/routerUtils";
+
 export const HostPopUp = () => {
-    const navigate = useNavigate();
+
+    const router = useRouter();
 
     const [playerName, setPlayerName] = useState('');
     const [playerNameValid, setPlayerNameValid] = useState(false);
@@ -19,7 +24,6 @@ export const HostPopUp = () => {
     function validatePlayerName(name) {
         let result = name != '';
         setPlayerNameValid(result);
-        console.log(result);
         return result;
     }
 
@@ -44,31 +48,37 @@ export const HostPopUp = () => {
         }).then(response => {
             if (!response.ok) {
                 throw Error(response.statusText)
-            
             }
             return response
         }).catch(error => {
             console.log(error)
         })
         const data = await res.json();
-        const roomCode = await data.roomcode;
-        const initialPlayers = await data.players;
-        const isHost = true;
-        navigate("/lobby", { state: { roomCode, isHost, initialPlayers } });
-        console.log("POOP");
-        console.log(roomCode);
-        console.log(initialPlayers);
+        
+        if (data.statusCode == 200) {
+            saveState('roomCode', data.payload.roomcode);
+            saveState('initialPlayers', data.payload.players);
+            saveState('isHost', true);
+            saveState('playerName', playerName);
+            if (router) {
+                console.log(router);
+                console.log("no more penis");
+                router.push('/lobby');
+            }
+        } else if (data.statusCode == 420) {
+            alert("Roomcode " + roomCode +" not found");
+        }
     }
 
     return (
         <div className={styles.popUpBack}>
             <div className={styles.popUpContainer}>
                 <div>
-                    <h2>Spyfall- Host Game</h2>
+                    <h2 className={styles.popUpHeader}> Spyfall - Host Game </h2>
 
                     <div className={styles.row}>
-                        <h3 style={{paddingRight: '10px', display:'inline'}}> Choose display name: </h3>
-                        <input
+                        <h3 className={styles.popUpText}> Name-o: </h3>
+                        <input className={styles.nameInput}
                             type="text" 
                             placeholder="Ex: Jeff"
                             value={playerName} // Bind the value of input to the state
@@ -81,7 +91,7 @@ export const HostPopUp = () => {
 
                 </div>
 
-                <button className={styles.popup__closeBtn} onClick={() => { checkForLumps() }}>Host Game</button>
+                <button className={styles.buttonSmall} onClick={() => { checkForLumps() }}> <b> Host Game </b> </button>
             </div>
         </div>
     );
