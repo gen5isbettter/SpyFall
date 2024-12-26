@@ -1,16 +1,15 @@
 'use client';
 
-import styles from '../styles/page.module.css';
-
 import {
     useState,
     useEffect,
     useRef
 } from 'react';
-
 import { useRouter } from 'next/navigation'; //equivalent to import Router from 'next/navigation'; and then accessing Router.useRouter();
-
 import { saveState, getState } from '@/utils/routerUtils';
+
+import styles from "../styles/page.module.css";
+import { BACKEND_URL } from "@/resources/config"
 
 export default function Lobby() {
 
@@ -39,7 +38,7 @@ export default function Lobby() {
     }, []);
 
     async function startLobby() {
-        const url = new URL('http://localhost:8080/start');
+        const url = new URL(BACKEND_URL + '/start');
         url.searchParams.append('roomcode', roomCode);
 
         await fetch(url, {
@@ -60,7 +59,7 @@ export default function Lobby() {
     }
 
     async function refreshLobby() {
-        const url = new URL('http://localhost:8080/lobby');
+        const url = new URL(BACKEND_URL + '/lobby');
         url.searchParams.append('roomcode', rc);
 
         const res = await fetch(url, {
@@ -103,7 +102,7 @@ export default function Lobby() {
     return (
         <main className={styles.container}>
             <div className={styles.header}>
-                <a className={styles.title} onClick={() => { router.push('/') }}> SpyGoon </a>
+                <a className={styles.title} onClick={() => { router.push('/home') }}> SpyGoon </a>
             </div>
 
             <div className={styles.container}>

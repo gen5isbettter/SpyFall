@@ -1,19 +1,19 @@
-import styles from "../styles/page.module.css";
-
 import {
     useState,
     useEffect
 } from 'react';
-
 import { useRouter } from 'next/navigation';
-
 import { saveState, getState } from "@/utils/routerUtils";
+
+import styles from "../styles/page.module.css";
+import { BACKEND_URL } from "@/resources/config"
 
 export default function Game() {
 
     const router = useRouter();
 
     let rc = '';
+    let pn = '';
     const [roomCode, setRoomCode] = useState('');
     const [playerName, setPlayerName] = useState('');
 
@@ -29,7 +29,9 @@ export default function Game() {
         if (typeof window !== "undefined") {
             rc = getState('roomCode');
             setRoomCode(rc);
-            setPlayerName(getState('playerName'));
+            pn = getState('playerName');
+            setPlayerName(pn);
+            console.log(pn);
         }
     
         // Cleanup the interval when the component unmounts
@@ -45,7 +47,7 @@ export default function Game() {
     };
 
     async function refreshLobby() {
-        const url = new URL('http://localhost:8080/lobby');
+        const url = new URL(BACKEND_URL + '/lobby');
         url.searchParams.append('roomcode', rc);
 
         const res = await fetch(url, {
@@ -68,7 +70,7 @@ export default function Game() {
         if (data.statusCode == 200) {
             setLocationSet(data.payload.locationSet);
             setPlayerList(data.payload.players);
-            setIsSpy(data.payload.spies.includes(playerName));
+            setIsSpy(data.payload.spies.includes(pn));
             setLocation(data.payload.location);
         } else if (data.statusCode == 420) {
             alert("Roomcode " + roomCode +" not found");
@@ -96,7 +98,7 @@ export default function Game() {
     return(
         <main className={styles.container}>
             <div className={styles.header}> 
-                <a className={styles.title} onClick={() => { router.push('/') }}> SpyGoon </a> 
+                <a className={styles.title} onClick={() => { router.push('/home') }}> SpyGoon </a> 
             </div>    
 
                 { location == undefined ?

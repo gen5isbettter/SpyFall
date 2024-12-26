@@ -1,11 +1,13 @@
 import React from "react";
-import styles from "../styles/page.module.css";
 
 import { useState } from 'react';
 
 import { useRouter } from 'next/navigation';
 
 import { saveState } from "@/utils/routerUtils";
+
+import styles from "../styles/page.module.css";
+import { BACKEND_URL } from "@/resources/config";
 
 export const JoinPopUp = () => {
 
@@ -45,7 +47,7 @@ export const JoinPopUp = () => {
     }
 
     async function monkeyBalls() {
-        const url = new URL('http://localhost:8080/lobby');
+        const url = new URL(BACKEND_URL + '/lobby');
         url.searchParams.append('playerName', playerName);
         url.searchParams.append('roomcode', roomCode);
 
