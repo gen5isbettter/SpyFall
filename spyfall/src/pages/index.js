@@ -1,12 +1,16 @@
 'use client';
 
-import styles from '../styles/page.module.css';
-import Home from './home.js'
+import { useRouter } from 'next/router';
+
+import {
+  useEffect,
+} from 'react';
 
 export default function BigFloppyWeiner() {
-  return (
-    <main className={styles.root}>
-      <Home />
-    </main>
-  );
+  const router = useRouter();
+  useEffect(() => {
+    router.push('/home');
+  }, [router]);
+  return <div>Redirecting...</div>;
+  
 }

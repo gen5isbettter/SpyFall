@@ -13,26 +13,28 @@ export default function Home() {
     const [hostIsVisible, setHostIsVisible] = useState(false);
 
     return (
-        <div className={styles.container}>
-            <div className={styles.header}>
-                <a className={styles.title}> SpyGoon </a>
-            </div>
-
+        <main className={styles.root}>
             <div className={styles.container}>
-                <div className={styles.homeContainer}>
-                    <button className={styles.button} onClick={() => { setHostIsVisible(true) }}> <b> Host Game </b> </button>
-                
-                    <p className={styles.stink} style={{display:'inline'}}> OR </p>
-                
-                    <button className={styles.button} onClick={() => { setJoinIsVisible(true) }}> <b> Join Game </b> </button>
+                <div className={styles.header}>
+                    <a className={styles.title}> SpyGoon </a>
                 </div>
+
+                <div className={styles.container}>
+                    <div className={styles.homeContainer}>
+                        <button className={styles.button} onClick={() => { setHostIsVisible(true) }}> <b> Host Game </b> </button>
+                    
+                        <p className={styles.stink} style={{display:'inline'}}> OR </p>
+                    
+                        <button className={styles.button} onClick={() => { setJoinIsVisible(true) }}> <b> Join Game </b> </button>
+                    </div>
+                </div>
+
+                {joinIsVisible && <JoinPopUp/>} 
+
+                {hostIsVisible && <HostPopUp/>}
+
             </div>
-
-            {joinIsVisible && <JoinPopUp/>} 
-
-            {hostIsVisible && <HostPopUp/>}
-
-        </div>
+        </main>
     );
 
 }
