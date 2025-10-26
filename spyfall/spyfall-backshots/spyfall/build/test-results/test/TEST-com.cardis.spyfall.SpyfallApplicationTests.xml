@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.cardis.spyfall.SpyfallApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-12-24T03:31:32" hostname="DESKTOP-G26B7MQ" time="0.682">
+  <properties/>
+  <testcase name="contextLoads()" classname="com.cardis.spyfall.SpyfallApplicationTests" time="0.682"/>
+  <system-out><![CDATA[22:31:31.155 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.cardis.spyfall.SpyfallApplicationTests]: SpyfallApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+22:31:31.296 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.cardis.spyfall.SpyfallApplication for test class com.cardis.spyfall.SpyfallApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.5)
+
+2024-12-23T22:31:31.713-05:00  INFO 16684 --- [spyfall] [    Test worker] c.c.spyfall.SpyfallApplicationTests      : Starting SpyfallApplicationTests using Java 17.0.12 with PID 16684 (started by ianki in C:\Users\ianki\Desktop\allspyfall_PENIS\spyfall-backshots\spyfall)
+2024-12-23T22:31:31.714-05:00  INFO 16684 --- [spyfall] [    Test worker] c.c.spyfall.SpyfallApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2024-12-23T22:31:32.800-05:00  INFO 16684 --- [spyfall] [    Test worker] c.c.spyfall.SpyfallApplicationTests      : Started SpyfallApplicationTests in 1.319 seconds (process running for 2.503)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
